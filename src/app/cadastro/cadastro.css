@@ -1,0 +1,43 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFF9F2;
+  margin-top: 1rem;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: row;
+  height: 40rem;
+  width: 50rem;
+}
+
+.image {
+  height: 40rem;
+  width: 40%;
+}
+
+.forms-login, .login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  flex-direction: column;
+  background-color: antiquewhite;
+}
+
+.forms-login > input, .forms-login > select {
+  background-color: white;
+  height: 2rem;
+  width: 20rem;
+  border-radius: 0.75rem;
+}
+
+.forms-login > button {
+  margin: 1rem 0rem;
+  background-color: white;
+  border-radius: 0.75rem;
+  height: 2rem;
+  width: 10rem;
+}

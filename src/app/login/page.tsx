@@ -3,7 +3,7 @@ import pesos from '../../../public/images/pesos.jpg';
 import './login.css';
 import Link from 'next/link';
 
-function Page() {
+function Login() {
   return (
     <main className="main-container">
       <section className="login-container">
@@ -24,4 +24,4 @@ function Page() {
   )
 }
 
-export default Page;
+export default Login;
