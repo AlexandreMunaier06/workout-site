@@ -1,14 +1,22 @@
+'use client'
+
 import Image from 'next/image';
 import pesos from '../../../public/images/pesos.jpg';
 import './cadastro.css';
 import Link from 'next/link';
+import React from 'react';
 
 function Cadastro() {
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  }
+
   return (
     <main className="main-container">
       <section className="login-container">
         <div className='login'>
-          <form action="" className='forms-login'>
+          <form action="" className='forms-login' onSubmit={(e) => handleSubmit(e)}>
             <label htmlFor="name">Nome:</label>
             <input type="text" id="name" required/>
 
