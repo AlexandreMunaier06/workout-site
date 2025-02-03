@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import react from '../../../public/images/react.png';
 import './header.css';
 import Link from 'next/link';
 
@@ -7,7 +6,7 @@ function Header() {
   return (
     <header className='header-container'>
       <Link href='/'>
-        <Image src={ react } alt="logo" />
+        <Image src='/images/react.png' alt="logo" width={50} height={50}/>
       </Link>
       <ul>
         <li><Link href='/'>Feed</Link></li>

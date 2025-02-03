@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image';
-import pesos from '../../../public/images/pesos.jpg';
 import './cadastro.css';
 import Link from 'next/link';
 import React from 'react';
@@ -51,7 +50,7 @@ function Cadastro() {
             <Link href='./login'>Já tem cadastro? Clique aqui!</Link>
           </form>
         </div>
-        <Image src={ pesos } alt="pesos de academia" className='image' />
+        <Image src='/images/pesos.jpg' alt="pesos de academia" className='image' width={100} height={100} />
       </section>
     </main>
   )

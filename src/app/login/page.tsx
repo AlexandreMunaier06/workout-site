@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import pesos from '../../../public/images/pesos.jpg';
 import './login.css';
 import Link from 'next/link';
 
@@ -18,7 +17,7 @@ function Login() {
             <Link href='./cadastro'>Não tem cadastro? Clique aqui!</Link>
           </form>
         </div>
-        <Image src={ pesos } alt="pesos de academia" className='image' />
+        <Image src='/images/pesos.jpg' alt="pesos de academia" className='image' width={100} height={100} />
       </section>
     </main>
   )
