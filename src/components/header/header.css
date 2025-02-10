@@ -2,11 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: antiquewhite;
-  height: 10%;
-  padding: 0rem 5rem;
-  position: fixed;
+  background-color: #343a40;
+  height: 10vh;
+  padding: 0 5rem;
   width: 100%;
+  color: #ffffff;
 }
 
 .header-container > ul {
@@ -16,8 +16,19 @@
 
 .header-container > ul > li {
   padding: 0.5rem;
+  list-style: none;
+}
+
+.header-container > ul > li > a {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .header-container > ul > li:hover {
   font-size: 1.2rem;
+}
+
+.header-container > a {
+  color: #ffffff;
+  text-decoration: none;
 }

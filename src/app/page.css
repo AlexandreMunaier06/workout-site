@@ -1,61 +1,69 @@
-.main-container {
+.container {
   display: flex;
-  padding-top: 5rem;
+  height: 90vh;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.aside-container {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  width: 25%;
+  background-color: #ffffff;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+.choice-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.choice-container h1 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  color: #333;
+}
+
+.choice-container div {
+  display: flex;
   align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0;
+  margin-bottom: 1rem;
 }
 
-.calculo-container, .result-container {
-  background-color: #fff;
-  padding: 1.25rem; /* 20px */
-  border-radius: 0.5rem; /* 8px */
-  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1); /* 10px */
-  max-width: 25rem; /* 400px */
-  width: 100%;
-  height: 40rem;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  transform: translateY(0);
-  opacity: 1;
+.radio-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
-.calculo-container h1 {
-  font-size: 1.5rem; /* 24px */
-  margin-bottom: 1.25rem; /* 20px */
-  text-align: center;
-}
-
-.calculo-container label {
-  display: block;
-  margin-bottom: 0.3125rem; /* 5px */
-  font-weight: bold;
-}
-
-.calculo-container input,
-.calculo-container select {
-  width: 100%;
-  padding: 0.625rem; /* 10px */
-  margin-bottom: 0.9375rem; /* 15px */
-  border: 1px solid #ccc;
-  border-radius: 0.25rem; /* 4px */
-}
-
-.calculo-container input::placeholder {
-  color: #aaa;
-}
-
-.calculo-container button {
-  width: 100%;
-  padding: 0.625rem; /* 10px */
-  border: none;
-  border-radius: 0.25rem; /* 4px */
-  background-color: #007bff;
-  color: #fff;
-  font-size: 1rem; /* 16px */
+.radio-input {
+  margin-right: 0.5rem;
+  width: 1rem !important;
   cursor: pointer;
 }
 
-.calculo-container button:hover {
-  background-color: #0056b3;
+.radio-label {
+  font-weight: bold;
+  cursor: pointer;
+  color: #555;
+}
+
+.main-container {
+  display: flex;
+  align-items: flex-start;
+  width: 75%;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-left: 2rem;
 }

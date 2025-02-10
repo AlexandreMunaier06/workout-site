@@ -9,7 +9,7 @@ function Header() {
         <Image src='/images/react.png' alt="logo" width={50} height={50}/>
       </Link>
       <ul>
-        <li><Link href='/'>Feed</Link></li>
+        <li><Link href='/'>Cálculos</Link></li>
         <li><Link href='/dieta'>Dieta</Link></li>
         <li><Link href='/perfil'>Perfil</Link></li>
       </ul>
