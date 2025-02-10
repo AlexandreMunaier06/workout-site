@@ -10,7 +10,7 @@ function Header() {
       </Link>
       <ul>
         <li><Link href='/'>Feed</Link></li>
-        <li><Link href='/treinos'>Treinos</Link></li>
+        <li><Link href='/dieta'>Dieta</Link></li>
         <li><Link href='/perfil'>Perfil</Link></li>
       </ul>
       <Link href='/login'>Login</Link>
