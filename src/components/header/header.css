@@ -5,6 +5,8 @@
   background-color: antiquewhite;
   height: 10%;
   padding: 0rem 5rem;
+  position: fixed;
+  width: 100%;
 }
 
 .header-container > ul {

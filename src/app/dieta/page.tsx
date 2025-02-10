@@ -28,41 +28,43 @@ function Dieta() {
     });
   };
   return (
-    <div className="dieta-container">
-      <h1>Registro de Dieta</h1>
-      <form>
-        {['breakfast', 'lunch', 'snack', 'dinner'].map((meal) => (
-          <div className="meal-input" key={meal}>
-            <label onClick={() => toggleSection(meal)}>
-              {meal.charAt(0).toUpperCase() + meal.slice(1)}:
-            </label>
-            {openSection === meal && (
-              <div>
-                <input
-                  type="text"
-                  placeholder="Carboidratos"
-                  value={macros[meal].carbs}
-                  onChange={(e) => handleMacroChange(meal, 'carbs', e.target.value)}
-                />
-                <input
-                  type="text"
-                  placeholder="Proteínas"
-                  value={macros[meal].protein}
-                  onChange={(e) => handleMacroChange(meal, 'protein', e.target.value)}
-                />
-                <input
-                  type="text"
-                  placeholder="Gorduras"
-                  value={macros[meal].fat}
-                  onChange={(e) => handleMacroChange(meal, 'fat', e.target.value)}
-                />
-              </div>
-            )}
-          </div>
-        ))}
-        <button type="submit">Salvar</button>
-      </form>
-    </div>
+    <section className='dieta-container'>
+      <div className="dieta">
+        <h1>Registro de Dieta</h1>
+        <form>
+          {['breakfast', 'lunch', 'snack', 'dinner'].map((meal) => (
+            <div className="meal-input" key={meal}>
+              <label onClick={() => toggleSection(meal)}>
+                {meal.charAt(0).toUpperCase() + meal.slice(1)}:
+              </label>
+              {openSection === meal && (
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Carboidratos"
+                    value={macros[meal].carbs}
+                    onChange={(e) => handleMacroChange(meal, 'carbs', e.target.value)}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Proteínas"
+                    value={macros[meal].protein}
+                    onChange={(e) => handleMacroChange(meal, 'protein', e.target.value)}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Gorduras"
+                    value={macros[meal].fat}
+                    onChange={(e) => handleMacroChange(meal, 'fat', e.target.value)}
+                  />
+                </div>
+              )}
+            </div>
+          ))}
+          <button type="submit">Salvar</button>
+        </form>
+      </div>
+    </section>
   );
 }
 
