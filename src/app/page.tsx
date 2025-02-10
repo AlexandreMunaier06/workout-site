@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import './page.css';
 import CalculateWater from '@/components/CalculateWater';
 import TMB from '@/components/TMB';
+import IMC from '@/components/IMC';
+import Fat from '@/components/fat';
 
 export default function Home() {
 
@@ -38,8 +40,8 @@ export default function Home() {
       <main className="main-container">
         {options === 0 && <TMB />}
         {options === 1 && <CalculateWater />}
-        {options === 2 && <CalculateWater />}
-        {options === 3 && <CalculateWater />}
+        {options === 2 && <IMC />}
+        {options === 3 && <Fat />}
       </main>
     </div>
   );
