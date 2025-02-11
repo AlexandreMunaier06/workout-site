@@ -16,10 +16,10 @@ export default function Home() {
       <aside className='aside-container'>
         <section className="choice-container">
           <h1>O que deseja calcular?</h1>
-          <div>
-            <input type="radio" id="TBM" value="0" name="choice" className="radio-input" onChange={(e) => setOptions(Number(e.target.value))} />
+            <div>
+            <input type="radio" id="TBM" value="0" name="choice" className="radio-input" onChange={(e) => setOptions(Number(e.target.value))} checked={options === 0} />
             <label htmlFor="TBM" className="radio-label">Metabolismo Basal e Gasto Calórico</label>
-          </div>
+            </div>
 
           <div className="radio-container">
             <input type="radio" id="water" value="1" name="choice" className="radio-input" onChange={(e) => setOptions(Number(e.target.value))} />

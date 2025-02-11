@@ -45,6 +45,7 @@ function IMC() {
           placeholder="em kilos"
           value={dados.weight}
           onChange={(e) => setDados({ ...dados, weight: e.target.value })}
+          required
         />
 
         <label htmlFor="weight">Altura</label>
@@ -53,6 +54,7 @@ function IMC() {
           placeholder='em centímetros'
           value={dados.height}
           onChange={(e) => setDados({ ...dados, height: e.target.value })}
+          required
         />
 
         <button className='calcular-btn' onClick={handleCalculateIMC}>

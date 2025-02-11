@@ -1,41 +1,62 @@
 import { useState } from "react";
+import Image from 'next/image';
 
 type DadosType = {
   gender: number,
   height: string,
+  weight: string,
   waist: string,
   neck: string,
   hip?: string,
+}
+
+type ResultType = {
+  fat: string,
+  fatMass: string,
+  leanMass: string,
 }
 
 function Fat() {
   const [dados, setDados] = useState<DadosType>({
     gender: 0,
     height: '',
+    weight: '',
     waist: '',
     neck: '',
     hip: '',
   });
 
-  const [fat, setFat] = useState<number>(0);
+  const [result, setResult] = useState<ResultType>({
+    fat: '',
+    fatMass: '',
+    leanMass: '',
+  });
 
   const handleCalculate = () => {
-    const height = Number(dados.height) / 100;
+    const height = Number(dados.height);
     const waist = Number(dados.waist);
     const neck = Number(dados.neck);
+    const weight = Number(dados.weight);
 
     if (!height || !waist || !neck || (dados.gender === 1 && !dados.hip)) {
       alert("Por favor, preencha todos os campos obrigatórios.");
       return;
     }
 
+    let fatPercentage: number;
     if (dados.gender === 0) {
-      setFat((495 / (1.0324 - 0.19077 * Math.log10(waist - neck) + 0.15456 * Math.log10(height)) - 450));
+      fatPercentage = 86.010 * Math.log10(waist - neck) - 70.041 * Math.log10(height) + 36.76;
     } else {
       const hip = Number(dados.hip);
-      setFat((495 / (1.29579 - 0.35004 * Math.log10(waist + hip - neck) + 0.22100 * Math.log10(height)) - 450));
+      fatPercentage = 163.205 * Math.log10(waist + hip - neck) - 97.684 * Math.log10(height) - 78.387;
     }
-  }
+
+    setResult({
+      fat: fatPercentage.toFixed(2),
+      fatMass: ((fatPercentage / 100) * weight).toFixed(2),
+      leanMass: (weight - ((fatPercentage / 100) * weight)).toFixed(2),
+    });
+  };
 
   return (
     <>
@@ -57,6 +78,14 @@ function Fat() {
           type="number"
           value={dados.height}
           onChange={(e) => setDados({ ...dados, height: e.target.value })}
+          required
+        />
+
+        <label htmlFor="weight">Peso (kg)</label>
+        <input
+          type="number"
+          value={dados.weight}
+          onChange={(e) => setDados({ ...dados, weight: e.target.value })}
           required
         />
 
@@ -93,9 +122,12 @@ function Fat() {
         </button>
       </section>
 
-      {fat > 0 && (
+      {result.fat && (
         <section className="result">
-          <p>Seu percentual de gordura é de {fat.toFixed(2)}%</p>
+          <p>Seu percentual de gordura é de {result.fat}%</p>
+          <p>Sua massa gorda em kilos é de {result.fatMass}kg</p>
+          <p>Sua massa magra total é de {result.leanMass}kg</p>
+          <Image src='/images/fat.png' alt="Body fat levels chart" width={350} height={200}/>
         </section>
       )}
     </>

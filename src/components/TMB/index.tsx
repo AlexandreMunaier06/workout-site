@@ -70,6 +70,7 @@ function TMB() {
           type="number"
           value={dados.age}
           onChange={(e) => setDados({ ...dados, age: e.target.value })}
+          required
         />
 
         <label htmlFor="gender">Gênero</label>
@@ -87,6 +88,7 @@ function TMB() {
           placeholder='em kilos'
           value={dados.weight}
           onChange={(e) => setDados({ ...dados, weight: e.target.value })}
+          required
         />
 
         <label htmlFor="height">Altura</label>
@@ -95,6 +97,7 @@ function TMB() {
           placeholder='em centimetros'
           value={dados.height}
           onChange={(e) => setDados({ ...dados, height: e.target.value })}
+          required
         />
 
         <label htmlFor="activity">Nível de atividade física</label>
