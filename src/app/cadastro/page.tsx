@@ -12,8 +12,6 @@ type FormCadastro = {
   email: string,
   password: string,
   gender: 'masculino' | 'feminino',
-  weight: string,
-  height: string,
 }
 
 function Cadastro() {
@@ -25,8 +23,6 @@ function Cadastro() {
     email: '',
     password: '',
     gender: 'masculino',
-    weight: '',
-    height: '',
   });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -39,8 +35,6 @@ function Cadastro() {
       email: formData?.email,
       password: formData?.password,
       gender: formData?.gender,
-      weight: formData?.weight ? Number(formData.weight) : null,
-      height: formData?.height ? Number(formData.height) : null
     };
   
     console.log('Enviando:', form);
@@ -57,6 +51,8 @@ function Cadastro() {
     } catch (err) {
       console.error('Erro na requisição:', err);
     }
+
+    window.location.href = '/login';
   };
 
   const handleSetForm = (name: string, event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -132,26 +128,6 @@ function Cadastro() {
               <option value="masculino">Masculino</option>
               <option value="feminino">Feminino</option>
             </select>
-
-            <label htmlFor="peso">Peso (kg):</label>
-            <input
-              type="text"
-              id="peso"
-              value={formData.weight}
-              onChange={(event) => handleSetForm('weight', event)}
-              placeholder='Peso em kilos'
-              required
-            />
-
-            <label htmlFor="altura">Altura (cm):</label>
-            <input
-              type="text"
-              id="altura"
-              value={formData.height}
-              onChange={(event) => handleSetForm('height', event)}
-              placeholder='Altura em centímetros'
-              required
-            />
 
             <button type='submit'>Cadastrar</button>
             <Link href='./login'>Já tem cadastro? Clique aqui!</Link>
